@@ -1,12 +1,9 @@
-var express = require('express');
+var fs = require('fs');
 
-var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
-  response.send(fs.writeFile('index.html', 'Hello node',function (err) {
+fs.writeFile('index.html', 'Hello node',function (err) {
 if (err) throw err;
 console.log('It\'s saved!');
-}));
 });
 
 var port = process.env.PORT || 5000;
