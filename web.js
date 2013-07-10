@@ -1,11 +1,15 @@
-var express = require('express');
+//var express = require('express');
 
 var fs = require ('fs');
-var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
-   response.send(fs.readFileSync('index.html'));
-});
+var homepage = fs.readFileSync('index.html');
+response.send(homepage);
+
+//var app = express.createServer(express.logger());
+
+//app.get('/', function(request, response) {
+//   response.send(fs.readFileSync('index.html'));
+//});
 
 //fs.readFileSync('index.html');
 
