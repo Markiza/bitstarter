@@ -1,9 +1,13 @@
-//var express = require('express');
+var express = require('express');
 
-var fs = require ('fs');
+var fs = require('fs');
+
+var app = express.createServer(express.logger());
 
 var homepage = fs.readFileSync('index.html');
-response.send(homepage.toString('utf8'));
+app.get('/',function(request,response) {
+    response.send(homepage.toString('utf-8'));
+});
 
 //var app = express.createServer(express.logger());
 
